@@ -18,12 +18,12 @@ void Deck::Shuffle()
 {
     srand(time(0));
     std::cout << "Shuffling..." << std::endl;
-    for(int f = 0; f < MAX; f++)
+    for(int i = 0; i < MAX; i++)
     {
         //Gets a random position in the deck
         int s = (rand() + time(0)) % MAX;
-        Card temp = deck[f];
-        deck[f] = deck[s];
+        Card temp = deck[i];
+        deck[i] = deck[s];
         deck[s] = temp;
     }
 }
