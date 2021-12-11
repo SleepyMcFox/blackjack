@@ -34,9 +34,9 @@ Deck::Deck()
     //Current card count for generating the deck
     int count = 0;
 
-    for (int s = 0; s < 4; s++)
+    for (int s = 0; s < MAX_SUITS; s++)
     {
-        for (int v = 1; v <= 13; v++)
+        for (int v = 1; v <= MAX_VALUE; v++)
         {
             deck[count] = Card(v, suits[s]);
             count++;
@@ -55,9 +55,9 @@ Deck::Deck(int num)
     int count = 0;
     std::cout << "Generating Deck..." << std::endl;
 
-    for (int s = 0; s < 4; s++)
+    for (int s = 0; s < MAX_SUITS; s++)
     {
-        for (int v = 1; v <= 13; v++)
+        for (int v = 1; v <= MAX_VALUE; v++)
         {
             deck[count] = Card(v, suits[s]);
             count++;
