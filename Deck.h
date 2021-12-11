@@ -16,7 +16,6 @@ class Deck
         //will be used to display the number of cards in
         //the deck
         int numberOfCardsInDeck;
-        int currentCard;
         Card *deck;
 
     public:
@@ -35,6 +34,8 @@ class Deck
         void Shuffle();
         //Deck Checker
         void DisplayDeck();
+
+        int currentCard;
 };
 
 

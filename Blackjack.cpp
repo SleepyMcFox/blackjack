@@ -123,7 +123,7 @@ bool CheckForWin(Player &p, Player &dl)
         p.plaScore++;
         return true;
     }
-    if(p.natural == true && dl.natural == true)
+    if((p.natural == true && dl.natural == true) || p.plaHandValue == dl.plaHandValue)
     {
         std::cout << "House and Player have tied" << std::endl << std::endl;
         return true;
@@ -183,12 +183,11 @@ void Game()
     bool winner = false;
     Player d(0);
     Player p(1);
-    
-    
+    Deck deck(52);
 
     for(int i = 0; i < 100; i++)
     {
-        Deck deck(52);
+        
         p.plaHand = new Card[10];
         d.plaHand = new Card[10];
         std::cout << "Round " << i + 1 << ":" << std::endl;
@@ -217,8 +216,9 @@ void Game()
             {
                 //if the total hand value is less that 
                 DealCardsToHand(d, deck);
-                winner = CheckForWin(p,d);
                 d.willHit = HitOrStand(d);
+                winner = CheckForWin(p,d);
+                
             }
             else
             {
@@ -230,6 +230,7 @@ void Game()
         std::cout << "Dealer Score: " << d.plaScore << " || Player Score: " << p.plaScore << std::endl << std::endl;
 
         winner = false;
+        deck.currentCard = 0;
 
         
     }

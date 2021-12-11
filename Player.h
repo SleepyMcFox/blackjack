@@ -5,8 +5,6 @@
 
 class Player
 {
-    private:
-        
     public:
         bool willHit;
         bool natural;
